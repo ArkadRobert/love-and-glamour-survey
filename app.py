@@ -3,6 +3,25 @@ import sqlite3
 
 app = Flask(__name__)
 
+def create_table():
+    conn = sqlite3.connect("survey.db")
+    cursor = conn.cursor()
+
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS feedback (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT,
+        rating TEXT,
+        improvement TEXT,
+        new_service TEXT
+    )
+    """)
+
+    conn.commit()
+    conn.close()
+
+create_table()
+
 @app.route("/", methods=["GET", "POST"])
 def survey():
 
