@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Love and Glamour Survey</title>
+
+<style>
+    .success-message{
+    background:#d4edda;
+    color:#155724;
+    padding:15px;
+    border-radius:10px;
+    margin-bottom:20px;
+    text-align:center;
+    font-weight:bold;
+}
+ :root{
+    --primary:#b30000;
+    --secondary:#d62828;
+    --light:#fff5f5;
+}   
+:root{
+    --primary-red:#b30000;
+    --dark-red:#7a0000;
+    --light-red:#fff4f4;
+    --text:#333;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:linear-gradient(
+        135deg,
+        #fff5f5,
+        #ffe5e5
+    );
+}
+
+.container{
+    max-width:700px;
+    margin:30px auto;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 0 15px rgba(0,0,0,0.1);
+}
+
+.logo{
+    text-align:center;
+}
+
+.logo img{
+    width:220px;
+    margin-bottom:0px;
+}
+
+h1{
+    text-align:center;
+    color:#000;
+}
+
+.subtitle{
+    text-align:center;
+    color:#777;
+    margin-top: 10px;
+    margin-bottom:25px;
+}
+
+label{
+    display:block;
+    margin-top:15px;
+    margin-bottom:8px;
+    font-weight:bold;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+textarea{
+    min-height:120px;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    background:gold;
+    border:none;
+    border-radius:8px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:20px;
+}
+
+button:hover{
+    background:#d4af37;
+}
+
+.footer{
+    text-align:center;
+    margin-top:20px;
+    color:#777;
+}
+
+@media(max-width:600px){
+
+.container{
+    margin:10px;
+    padding:20px;
+}
+
+h1{
+    font-size:28px;
+}
+
+}
+button{
+    background:var(--primary);
+    color:white;
+    border:none;
+    padding:15px 25px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:18px;
+    font-weight:bold;
+    width:100%;
+    transition:0.3s;
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="logo">
+
+        <!-- Replace logo.png with your logo -->
+       <img src="{{ url_for('static', filename='logo.png') }}" alt="Love and Glamour Logo" class="logo">
+        <h1>LOVE AND GLAMOUR SERVICES</h1>
+
+        <p class="subtitle">
+            We help deliver heartfelt messages for birthdays,
+            Christmas, anniversaries and special occasions.
+        </p>
+
+    </div>
+{% if success %}
+<div class="success-message">
+    ❤️ Thank you for your feedback!
+</div>
+{% endif %}
+<form method="POST">
+<label>Your Name</label>
+<input type="text" name="name" required>
+
+<label>How satisfied are you with our service?</label>
+
+<select name="rating">
+
+<option>⭐⭐⭐⭐⭐ Excellent</option>
+<option>⭐⭐⭐⭐ Good</option>
+<option>⭐⭐⭐ Average</option>
+<option>⭐⭐ Poor</option>
+<option>⭐ Very Poor</option>
+
+</select>
+
+<label>What do you think we should improve?</label>
+<textarea name="improvement"></textarea>
+
+<label>What new services would you like us to add?</label>
+<textarea name="new_service"></textarea>
+
+<button type="submit">
+Submit Feedback
+</button>
+
+</form>
+
+<div class="footer">
+<hr>
+
+<p><strong>Love and Glamour Services</strong></p>
+
+<p>
+Delivering heartfelt messages for birthdays,
+anniversaries, Christmas and special occasions.
+</p>
+
+<p>© 2026 Love and Glamour Services</p>
+
+</div>
+
+</div>
+
+</body>
+</html>

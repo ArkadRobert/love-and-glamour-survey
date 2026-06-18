@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Love & Glamour Admin Dashboard</title>
+
+    <style>
+
+    body{
+        font-family: Arial, sans-serif;
+        background:#f4f4f4;
+        padding:20px;
+    }
+
+    h1{
+        text-align:center;
+        color:#b30000;
+    }
+
+    table{
+        width:100%;
+        background:white;
+        border-collapse:collapse;
+    }
+
+    th{
+        background:#b30000;
+        color:white;
+        padding:12px;
+    }
+
+    td{
+        padding:12px;
+        border:1px solid #ddd;
+    }
+
+    tr:nth-child(even){
+        background:#f9f9f9;
+    }
+
+    </style>
+</head>
+
+<body>
+
+<h1>Love & Glamour Survey Responses</h1>
+
+<table>
+
+<tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Rating</th>
+    <th>Improvement</th>
+    <th>New Service</th>
+</tr>
+
+{% for response in responses %}
+
+<tr>
+    <td>{{ response[0] }}</td>
+    <td>{{ response[1] }}</td>
+    <td>{{ response[2] }}</td>
+    <td>{{ response[3] }}</td>
+    <td>{{ response[4] }}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+</body>
+</html>
