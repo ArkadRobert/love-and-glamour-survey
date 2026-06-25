@@ -1,0 +1,476 @@
+/* =========================
+GLOBAL
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+html {
+scroll-behavior: smooth;
+}
+
+body {
+font-family: Arial, Helvetica, sans-serif;
+background: #f8f9fb;
+color: #333;
+line-height: 1.7;
+}
+
+a {
+text-decoration: none;
+}
+
+img {
+max-width: 100%;
+display: block;
+}
+
+main {
+min-height: 70vh;
+}
+
+/* =========================
+NAVIGATION
+========================= */
+
+nav {
+background: #111;
+color: white;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 15px 60px;
+position: sticky;
+top: 0;
+z-index: 1000;
+box-shadow: 0 3px 15px rgba(0,0,0,0.15);
+}
+
+/* LOGO */
+
+.logo {
+display: flex;
+align-items: center;
+gap: 15px;
+}
+
+.logo img {
+height: 80px;
+width: auto;
+}
+
+.logo-text {
+display: flex;
+flex-direction: column;
+}
+
+.logo-text h2 {
+color: #D4AF37;
+font-size: 28px;
+line-height: 1.2;
+}
+
+.logo-text span {
+color: #ffffff;
+font-size: 12px;
+letter-spacing: 1px;
+}
+
+nav ul {
+display: flex;
+list-style: none;
+gap: 30px;
+}
+
+nav ul li a {
+color: white;
+font-weight: bold;
+transition: 0.3s ease;
+}
+
+nav ul li a:hover {
+color: #D4AF37;
+}
+
+/* =========================
+HERO SECTION
+========================= */
+
+.hero {
+text-align: center;
+padding: 140px 20px;
+color: white;
+background:
+linear-gradient(
+rgba(0,0,0,0.65),
+rgba(0,0,0,0.65)
+),
+url("https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2");
+
+```
+background-size: cover;
+background-position: center;
+```
+
+}
+
+.hero h1 {
+font-size: 60px;
+margin-bottom: 25px;
+}
+
+.hero p {
+max-width: 850px;
+margin: auto;
+font-size: 20px;
+margin-bottom: 25px;
+}
+
+/* =========================
+BUTTONS
+========================= */
+
+.btn {
+display: inline-block;
+margin: 20px 10px;
+padding: 15px 35px;
+background: #D4AF37;
+color: black;
+border-radius: 8px;
+font-weight: bold;
+transition: 0.3s ease;
+}
+
+.btn:hover {
+transform: translateY(-3px);
+box-shadow: 0 8px 20px rgba(212,175,55,0.3);
+}
+
+.secondary {
+background: white;
+color: #111;
+}
+
+/* =========================
+FEATURES
+========================= */
+
+.features {
+padding: 80px 20px;
+display: flex;
+justify-content: center;
+gap: 30px;
+flex-wrap: wrap;
+}
+
+.features h2 {
+width: 100%;
+text-align: center;
+margin-bottom: 30px;
+font-size: 38px;
+}
+
+/* =========================
+CARDS
+========================= */
+
+.card {
+background: white;
+width: 330px;
+padding: 30px;
+border-radius: 15px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.10);
+transition: 0.3s ease;
+border-top: 4px solid #D4AF37;
+}
+
+.card:hover {
+transform: translateY(-10px);
+}
+
+.card h2,
+.card h3 {
+color: #D4AF37;
+text-align: center;
+margin-bottom: 15px;
+}
+
+.card p {
+margin-bottom: 10px;
+}
+
+/* =========================
+HOW IT WORKS
+========================= */
+
+.how-it-works {
+background: white;
+padding: 80px 20px;
+text-align: center;
+}
+
+.how-it-works h2 {
+font-size: 40px;
+margin-bottom: 50px;
+}
+
+.steps {
+display: flex;
+justify-content: center;
+gap: 30px;
+flex-wrap: wrap;
+}
+
+.step {
+background: #f8f9fb;
+width: 320px;
+padding: 30px;
+border-radius: 15px;
+box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.step h3 {
+color: #D4AF37;
+margin-bottom: 15px;
+}
+
+/* =========================
+ABOUT PAGE
+========================= */
+
+.about-content {
+max-width: 1000px;
+margin: auto;
+padding: 80px 30px;
+}
+
+.about-content h2 {
+color: #D4AF37;
+margin-top: 40px;
+margin-bottom: 15px;
+}
+
+.about-content ul {
+margin-left: 25px;
+}
+
+.about-content li {
+margin-bottom: 10px;
+}
+
+/* =========================
+WHY US
+========================= */
+
+.why-us {
+background: white;
+padding: 80px 20px;
+text-align: center;
+}
+
+.why-us h2 {
+margin-bottom: 30px;
+}
+
+.why-us ul {
+list-style: none;
+}
+
+.why-us li {
+margin-bottom: 15px;
+font-size: 18px;
+}
+
+/* =========================
+CTA
+========================= */
+
+.cta {
+background: #111;
+color: white;
+text-align: center;
+padding: 90px 20px;
+}
+
+.cta h2 {
+font-size: 42px;
+margin-bottom: 20px;
+}
+
+.cta p {
+max-width: 700px;
+margin: auto;
+margin-bottom: 25px;
+}
+
+/* =========================
+ORDER PAGE
+========================= */
+
+.order-container {
+max-width: 800px;
+margin: 60px auto;
+background: white;
+padding: 45px;
+border-radius: 15px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.10);
+}
+
+.order-container h1 {
+text-align: center;
+margin-bottom: 20px;
+}
+
+.order-form input,
+.order-form select,
+.order-form textarea {
+width: 100%;
+padding: 15px;
+margin-bottom: 18px;
+border: 1px solid #ddd;
+border-radius: 8px;
+font-size: 15px;
+}
+
+.order-form input:focus,
+.order-form select:focus,
+.order-form textarea:focus {
+outline: none;
+border-color: #D4AF37;
+}
+
+.order-form textarea {
+min-height: 140px;
+resize: vertical;
+}
+
+.order-form button {
+width: 100%;
+padding: 16px;
+border: none;
+background: #D4AF37;
+color: black;
+font-size: 16px;
+font-weight: bold;
+border-radius: 8px;
+cursor: pointer;
+}
+
+.order-form button:hover {
+opacity: 0.95;
+}
+
+.success-message {
+background: #d4edda;
+color: #155724;
+padding: 15px;
+border-radius: 6px;
+margin-bottom: 20px;
+text-align: center;
+}
+
+/* =========================
+CONTACT PAGE
+========================= */
+
+.contact-section {
+max-width: 900px;
+margin: auto;
+text-align: center;
+padding: 80px 20px;
+}
+
+/* =========================
+FOOTER
+========================= */
+
+.footer {
+background: #111;
+color: white;
+text-align: center;
+padding: 50px 20px;
+margin-top: 60px;
+}
+
+.footer h3 {
+color: #D4AF37;
+margin-bottom: 15px;
+}
+
+.footer a {
+color: #D4AF37;
+}
+
+.footer p {
+margin-bottom: 10px;
+}
+
+/* =========================
+MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+```
+nav {
+    flex-direction: column;
+    padding: 20px;
+}
+
+nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.logo {
+    flex-direction: column;
+    text-align: center;
+}
+
+.logo img {
+    height: 70px;
+}
+
+.logo-text h2 {
+    font-size: 22px;
+}
+
+.logo-text span {
+    font-size: 11px;
+}
+
+.hero {
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 38px;
+}
+
+.hero p {
+    font-size: 16px;
+}
+
+.features,
+.steps {
+    flex-direction: column;
+    align-items: center;
+}
+
+.card,
+.step {
+    width: 90%;
+}
+
+.order-container {
+    width: 95%;
+    padding: 25px;
+}
+```
+
+}

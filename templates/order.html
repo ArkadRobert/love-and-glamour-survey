@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>Place Order - Love & Glamour Services</title>
+
+<link rel="icon" href="{{ url_for('static', filename='logo.png') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+```
+
+</head>
+<body>
+
+<nav>
+
+```
+<div class="logo">
+
+    <img src="{{ url_for('static', filename='logo.png') }}"
+         alt="Love & Glamour Services Logo">
+
+    <div class="logo-text">
+        <h2>Love & Glamour Services</h2>
+        <span>Creating Memorable Moments</span>
+    </div>
+
+</div>
+
+<ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/services">Services</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/order">Place Order</a></li>
+    <li><a href="/contact">Contact</a></li>
+</ul>
+```
+
+</nav>
+
+<main>
+
+<section class="hero">
+
+```
+<h1>Place Your Order</h1>
+
+<p>
+    Let us help you create a memorable experience for your loved ones.
+    Complete the form below and we'll handle the rest professionally,
+    confidentially, and on time.
+</p>
+```
+
+</section>
+
+<div class="order-container">
+
+```
+<h1>Order Details</h1>
+
+<p style="text-align:center; margin-bottom:30px;">
+    Fill in the details below and our team will contact you if
+    additional information is required.
+</p>
+
+{% if success %}
+<div class="success-message">
+    ✅ Thank you for your order!
+
+    <br><br>
+
+    We have received your request and our team will contact you shortly.
+
+    <br><br>
+
+    For urgent requests, contact us on WhatsApp:
+    <strong>07082514967</strong>
+</div>
+{% endif %}
+
+<form method="POST" class="order-form">
+
+    <h3>Customer Information</h3>
+
+    <input
+        type="text"
+        name="customer_name"
+        placeholder="Your Full Name"
+        required
+    >
+
+    <input
+        type="email"
+        name="email"
+        placeholder="Your Email Address"
+    >
+
+    <input
+        type="tel"
+        name="phone"
+        placeholder="Your Phone Number"
+        required
+    >
+
+    <select name="contact_method">
+        <option value="">Preferred Contact Method</option>
+        <option>WhatsApp</option>
+        <option>Phone Call</option>
+        <option>Email</option>
+    </select>
+
+    <hr>
+
+    <h3>Recipient Information</h3>
+
+    <input
+        type="text"
+        name="recipient_name"
+        placeholder="Recipient's Name"
+        required
+    >
+
+    <input
+        type="tel"
+        name="recipient_phone"
+        placeholder="Recipient's Phone Number"
+        required
+    >
+
+    <hr>
+
+    <h3>Service Details</h3>
+
+    <select name="service" required>
+
+        <option value="">Select a Service</option>
+
+        <option>Birthday Call</option>
+        <option>Love & Anniversary Call</option>
+        <option>Apology Call</option>
+        <option>Appreciation Call</option>
+        <option>Encouragement Call</option>
+        <option>Get Well Soon Call</option>
+        <option>Condolence Call</option>
+        <option>Congratulatory Call</option>
+        <option>Loyalty Test</option>
+        <option>Prank Call</option>
+        <option>Convocation Call</option>
+        <option>Christmas Call</option>
+        <option>Father's Day Call</option>
+
+    </select>
+
+    <input
+        type="text"
+        name="occasion"
+        placeholder="Occasion (Birthday, Anniversary, Graduation, etc.)"
+    >
+
+    <select name="package" required>
+
+        <option value="">Select Package</option>
+
+        <option>Regular Package</option>
+        <option>Standard Package</option>
+        <option>Premium Package</option>
+
+    </select>
+
+    <label for="delivery_date">
+        Preferred Delivery Date
+    </label>
+
+    <input
+        type="date"
+        id="delivery_date"
+        name="delivery_date"
+        required
+    >
+
+    <label for="delivery_time">
+        Preferred Delivery Time
+    </label>
+
+    <input
+        type="time"
+        id="delivery_time"
+        name="delivery_time"
+        required
+    >
+
+    <textarea
+        name="message"
+        rows="6"
+        placeholder="Write the message, special instructions, preferred language, names to mention, background music requests, and any additional details."
+    ></textarea>
+
+    <label style="display:flex; gap:10px; align-items:center; margin-bottom:20px;">
+        <input type="checkbox" required>
+        I confirm that the information provided is accurate.
+    </label>
+
+    <button type="submit">
+        Submit Order
+    </button>
+
+</form>
+```
+
+</div>
+
+<section class="features">
+
+```
+<h2>Package Comparison</h2>
+
+<div class="card">
+    <h3>Regular Package</h3>
+    <p>✓ Personalized Call</p>
+    <p>✓ Professional Delivery</p>
+    <p>✓ Affordable Pricing</p>
+</div>
+
+<div class="card">
+    <h3>Standard Package</h3>
+    <p>✓ Personalized Call</p>
+    <p>✓ Background Music</p>
+    <p>✓ Language Choice</p>
+    <p>✓ Enhanced Experience</p>
+</div>
+
+<div class="card">
+    <h3>Premium Package</h3>
+    <p>✓ Everything in Standard</p>
+    <p>✓ Custom Video</p>
+    <p>✓ Text Message</p>
+    <p>✓ Custom Flier Design</p>
+</div>
+```
+
+</section>
+
+<section class="why-us">
+
+```
+<h2>Why Order With Us?</h2>
+
+<ul>
+    <li>✓ Personalized communication services</li>
+    <li>✓ Professional and friendly callers</li>
+    <li>✓ Fast and reliable delivery</li>
+    <li>✓ Affordable packages for every budget</li>
+    <li>✓ Confidential handling of customer information</li>
+    <li>✓ Customized experiences for every occasion</li>
+</ul>
+```
+
+</section>
+
+<section class="cta">
+
+```
+<h2>Need Help Before Ordering?</h2>
+
+<p>
+    Contact us directly on WhatsApp and we'll guide you through
+    selecting the perfect service and package.
+</p>
+
+<a
+    href="https://wa.me/2347082514967"
+    target="_blank"
+    class="btn"
+>
+    Chat on WhatsApp
+</a>
+```
+
+</section>
+
+</main>
+
+<footer class="footer">
+
+```
+<h3>Love & Glamour Services</h3>
+
+<p>
+    Creating memorable moments through personalized calls,
+    celebrations, and surprise experiences.
+</p>
+
+<p>
+    WhatsApp:
+    <a href="https://wa.me/2347082514967" target="_blank">
+        07082514967
+    </a>
+</p>
+
+<p>
+    © 2026 Love & Glamour Services. All Rights Reserved.
+</p>
+```
+
+</footer>
+
+<a
+href="https://wa.me/2347082514967"
+class="whatsapp-float"
+target="_blank"
+
+>
+
+```
+💬
+```
+
+</a>
+
+</body>
+</html>
